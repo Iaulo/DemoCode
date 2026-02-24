@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agent Sandbox Front</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Agent Sandbox</h1>
+    <div class="actions">
+      <button id="themeBtn" aria-label="Cambiar tema">🌗</button>
+      <a href="/api/health" target="_blank" rel="noreferrer">API health</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Crear item</h2>
+      <form id="createForm">
+        <input id="titleInput" type="text" placeholder="Título…" required minlength="1" />
+        <button type="submit">Añadir</button>
+      </form>
+      <p id="error" class="error" role="alert" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <h2>Listado</h2>
+      <div class="row">
+        <input id="searchInput" type="search" placeholder="Buscar…" />
+        <button id="refreshBtn">Refrescar</button>
+      </div>
+      <ul id="itemsList" class="list" aria-label="Lista de items"></ul>
+      <p id="empty" class="muted">No hay items.</p>
+    </section>
+
+    <section class="card">
+      <h2>Info</h2>
+      <p class="muted">
+        Este repo está hecho para que tus agentes generen tests: unitarios (store),
+        funcionales (UI con Playwright) y performance (Locust).
+      </p>
+      <p class="muted" id="buildInfo"></p>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
